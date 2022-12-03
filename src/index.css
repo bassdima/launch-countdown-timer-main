@@ -1,0 +1,21 @@
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  body, html, #root, .wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  #root {
+    display: contents;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    background: url('bg-stars.svg'), linear-gradient(hsl(234, 17%, 12%), 10%, #241e2c, 63%, #30243a);
+  }

@@ -1,0 +1,36 @@
+    .footer-section {
+        display: flex;
+        bottom: 0px;
+        width: 100%;
+        justify-content: center;
+        background-image: url(pattern-hills.svg);       
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 150% 60%;
+        padding-top: 44%;
+        padding-bottom: 48px;
+    }
+    .footer-icons{
+        display: flex;
+        gap: 33px;
+    }
+
+    .icon{
+        width: 24px;
+    }
+
+@media screen and (min-width: 1000px) {
+    .footer-section {
+        padding-top: 10%;
+        background-size: cover;
+    }
+
+    .icon{
+        width: 24px;
+    }
+
+    .icon:hover > path {
+    fill:#d64f70;
+    cursor: pointer;
+    }
+}

@@ -1,0 +1,36 @@
+.title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 6.13636px;
+  text-transform: uppercase;
+  padding: 124px 24px 54px 24px;
+  color: hsl(0, 0%, 100%);  
+}
+
+@media screen and (max-width: 300px) {
+  .title {
+      font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+  .title {
+      font-size: 25px;
+      margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+  .title{
+      word-spacing: -5px;
+      letter-spacing: 7px;
+      padding: 80px 91px 75px 86px;
+      font-size: 29px;
+      line-height: 65px;
+      margin-top: 0;
+  }
+}
+  
