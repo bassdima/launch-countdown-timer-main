@@ -9,10 +9,13 @@
     height: 100%;
   }
 
+  body {
+    background: url('bg-stars.svg'), linear-gradient(hsl(234, 17%, 12%), 10%, #241e2c, 63%, #30243a);
+  }
+
   #root {
     min-height: 100%;
     min-width: 100%;
     display: flex;
     flex-direction: column;
-    background: url('bg-stars.svg'), linear-gradient(hsl(234, 17%, 12%), 10%, #241e2c, 63%, #30243a);
   }
