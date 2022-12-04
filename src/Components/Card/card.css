@@ -1,10 +1,9 @@
 .card-container {
     display: inline-flex;
-    flex-direction: column;
     box-shadow: 0px 5px 10px black;
     border-radius: 31px 31px 17px 17px;
     background-color: black;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .flip-card-background, .flip-card-front {
@@ -21,14 +20,18 @@
 }
 
 .top {
-    position: relative;
     background:
-      radial-gradient(circle 0px at top left,#0000 98%,#2c2c44) top left,
-      radial-gradient(circle 0px at top right ,#0000 98%,#2c2c44) top right,
-      radial-gradient(circle 5px at bottom left ,#0000 98%,#2c2c44) bottom left,
-      radial-gradient(circle 5px at bottom right,#0000 98%,#2c2c44) bottom right;
-    background-size:51% 51%;
-    background-repeat:no-repeat;
+        -webkit-radial-gradient(0% 100%, circle, transparent 8%, #2c2c44 8%) no-repeat,
+        -webkit-radial-gradient(100% 0%, circle, transparent 0%, #2c2c44 0%) no-repeat,
+        -webkit-radial-gradient(0% 0%, circle, transparent 0%, #2c2c44 0%) no-repeat,
+        -webkit-radial-gradient(100% 100%, circle, transparent 8%, #2c2c44 8%) no-repeat;
+    background:
+        radial-gradient(circle at 0% 100%, transparent 8%, #2c2c44 8%) no-repeat, 
+        radial-gradient(circle at 100% 0%, transparent 0%, #2c2c44 0%) no-repeat, 
+        radial-gradient(circle at 0% 0%, transparent 0%, #2c2c44 0%) no-repeat,
+        radial-gradient(circle at 100% 100%, transparent 8%, #2c2c44 8%) no-repeat;
+    background-position: 0% 100%, 100% 0%, 0% 0%, 100% 100%;
+    background-size: 75% 75%;
     border-radius: 10px 10px 0 0;
     color: #d64f70;
 }
@@ -37,18 +40,19 @@
     display: flex;
     align-items: flex-end;
     background:
-      radial-gradient(circle 0px at bottom left,#0000 98%,#34364f) bottom left,
-      radial-gradient(circle 0px at bottom right ,#0000 98%,#34364f) bottom right,
-      radial-gradient(circle 5px at top left ,#0000 98%,#34364f) top left,
-      radial-gradient(circle 5px at top right,#0000 98%,#34364f) top right;
-    background-size:51% 51%;
-    background-repeat:no-repeat;
+        -webkit-radial-gradient(circle at 0% 100%, transparent 0%, #34364f 0%) no-repeat, 
+        -webkit-radial-gradient(circle at 100% 0%, transparent 8%, #34364f 8%) no-repeat, 
+        -webkit-radial-gradient(circle at 0% 0%, transparent 8%, #34364f 8%) no-repeat,
+        -webkit-radial-gradient(circle at 100% 100%, transparent 0%, #34364f 0%) no-repeat;
+    background:
+        radial-gradient(circle at 0% 100%, transparent 0%, #34364f 0%) no-repeat, 
+        radial-gradient(circle at 100% 0%, transparent 8%, #34364f 8%) no-repeat, 
+        radial-gradient(circle at 0% 0%, transparent 8%, #34364f 8%) no-repeat,
+        radial-gradient(circle at 100% 100%, transparent 0%, #34364f 0%) no-repeat;
+    background-position: 0% 100%, 100% 0%, 0% 0%, 100% 100%;
+    background-size: 75% 75%;
     border-radius: 0 0 10px 10px;
     color: #fc5d85;
-    overflow: hidden;
-}
-
-.top-background {
     overflow: hidden;
 }
 
@@ -91,7 +95,6 @@
 
 .card-title {
     font-size: 7px;
-    line-height: 9px;
     text-align: center;
     letter-spacing: 2.95937px;
     color: #8385A9;
@@ -127,11 +130,8 @@
 
 @media screen and (min-width: 1000px) {
     .card-container {
-        margin-bottom: 15px;
         box-shadow: 0px 10px 0px black;
-        background-color: black;
-        border-radius: 20px;
-        margin-bottom: 39px;
+        margin-bottom: 19px;
     }
 
     .flip-card-background, .flip-card-front {
@@ -139,35 +139,11 @@
     }
 
     .top, .bottom {
-        height: 0.75em;
-        line-height: 1;
-        padding: .25em;
         font-size: 98px;
-    }
-
-    .top {
-        background:
-          radial-gradient(circle 0px at top left,#0000 98%,#2c2c44) top left,
-          radial-gradient(circle 0px at top right ,#0000 98%,#2c2c44) top right,
-          radial-gradient(circle 10px at bottom left ,#0000 98%,#2c2c44) bottom left,
-          radial-gradient(circle 10px at bottom right,#0000 98%,#2c2c44) bottom right;
-        background-size:51% 51%;
-        background-repeat:no-repeat;
-    }
-    
-    .bottom {
-        background:
-          radial-gradient(circle 0px at bottom left,#0000 98%,#34364f) bottom left,
-          radial-gradient(circle 0px at bottom right ,#0000 98%,#34364f) bottom right,
-          radial-gradient(circle 10px at top left ,#0000 98%,#34364f) top left,
-          radial-gradient(circle 10px at top right,#0000 98%,#34364f) top right;
-        background-size:51% 51%;
-        background-repeat:no-repeat;
     }
 
     .card-title {
         font-size: 14px;
-        line-height: 19px;
         letter-spacing: 5.91875px;
     }
 }

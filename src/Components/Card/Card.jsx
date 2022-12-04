@@ -1,52 +1,36 @@
 import { useState, useEffect, useRef } from "react";
+import { useDisplayedValue } from "../../hooks";
 import "./card.css";
 
-const useDispayedValue = (value) => {
-    const [displayedValue, setdisplayedValue] = useState(value);
-    
-    useEffect(()=>{
-        const domValueTimeout = setTimeout(()=>{
-            setdisplayedValue(value);
-        }, 315)
-    
-        return ()=> {
-            clearTimeout(domValueTimeout);
-        }
-    }, [value])
-
-    return displayedValue
-}
-
-function Card(props) {
+function Card({ value, backgroundBottomValue, cardTitle }) {
     const topRef = useRef(null);
     const bottomRef = useRef(null);
-
     const [animationClassTop, setClassTop] = useState('');
     const [animationClassBottom, setClassBottom] = useState('');
-    const displayedValue = useDispayedValue(props.value);
-
-
-    const onTopAnimationEnd = () => {
-        setClassBottom('inverted-bottom');
-    }
-    const onBottomAnimationEnd = () => {
-        setClassTop('');
-        setClassBottom('');
-    }
+    const displayedValue = useDisplayedValue(value);
 
     useEffect(()=> {
         setClassTop('inverted-top');
-    }, [props.value]);
+    }, [value]);
     
     useEffect(() => {
-        topRef.current.addEventListener('animationend', onTopAnimationEnd);
-        bottomRef.current.addEventListener('animationend', onBottomAnimationEnd);
+        const topCard = topRef.current;
+        const bottomCard = bottomRef.current;
+        const onTopAnimationEnd = () => setClassBottom('inverted-bottom');
+        
+        const onBottomAnimationEnd = () => {
+            setClassTop('');
+            setClassBottom('');
+        }
+
+        topCard.addEventListener('animationend', onTopAnimationEnd);
+        bottomCard.addEventListener('animationend', onBottomAnimationEnd);
 
         return ()=> {
-            topRef.current.removeEventListener('animationend', onTopAnimationEnd);
-            bottomRef.current.removeEventListener('animationend', onBottomAnimationEnd);
+            topCard.removeEventListener('animationend', onTopAnimationEnd);
+            bottomCard.removeEventListener('animationend', onBottomAnimationEnd);
         }
-    }, [onTopAnimationEnd, onBottomAnimationEnd]);
+    }, []);
 
 
     return (
@@ -54,14 +38,14 @@ function Card(props) {
             <section className="card-container">
                 <div className="flip-card-background">
                     <div className="top top-background">{displayedValue}</div>
-                    <div className="bottom">{props.backgroundBottomValue}</div>
+                    <div className="bottom">{backgroundBottomValue}</div>
                 </div>
                 <div className="flip-card-front">
                     <div ref={topRef} className={`top ${animationClassTop}`}>{displayedValue}</div>
                     <div ref={bottomRef} className={`bottom ${animationClassBottom}`}>{displayedValue}</div>
                 </div>
             </section>
-            <p className="card-title">{props.cardTitle}</p>
+            <p className="card-title">{cardTitle}</p>
         </div>
     );
 }

@@ -1,7 +1,5 @@
     .footer-section {
         display: flex;
-        bottom: 0px;
-        width: 100%;
         justify-content: center;
         background-image: url(pattern-hills.svg);       
         background-repeat: no-repeat;
@@ -23,10 +21,6 @@
     .footer-section {
         padding-top: 10%;
         background-size: cover;
-    }
-
-    .icon{
-        width: 24px;
     }
 
     .icon:hover > path {
