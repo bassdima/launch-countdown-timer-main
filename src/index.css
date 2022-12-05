@@ -7,6 +7,7 @@
   
   body, html {
     height: 100%;
+    background-color: hsl(234, 17%, 12%);
   }
 
   #root {
